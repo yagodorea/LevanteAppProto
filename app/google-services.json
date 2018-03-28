@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "517201686117",
+    "firebase_url": "https://levanteapp-83089.firebaseio.com",
+    "project_id": "levanteapp-83089",
+    "storage_bucket": "levanteapp-83089.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517201686117:android:333f0b5f49f932ac",
+        "android_client_info": {
+          "package_name": "com.example.yago_.levanteappproto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517201686117-e239f1j3m92vdbmctpjf9v83jvrokb1d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yago_.levanteappproto",
+            "certificate_hash": "ad3139a782c3692626fd5b73d6e9da020576281b"
+          }
+        },
+        {
+          "client_id": "517201686117-21oalpq455gl56blc63vlb1qhi7ihe71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDorP7c_jn2Gq6l5IlxLdMZMnExkzR0gKs"
+        },
+        {
+          "current_key": "AIzaSyAOFOuIG2qBzNC4Jr5RJKpB24NPfJHQlBU"
+        },
+        {
+          "current_key": "AIzaSyC9_CR30s0jl6HHeQLaj_7Rp1hnJLhTRZc"
+        },
+        {
+          "current_key": "AIzaSyBYtO4uu9qgtFFiEQLuPXQJZkeBvRHHa78"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517201686117-21oalpq455gl56blc63vlb1qhi7ihe71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517201686117:android:3848d18492c08269",
+        "android_client_info": {
+          "package_name": "com.example.levanteappproto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517201686117-6u3o93ti78ktrb63mngbdm2t7qlijhgd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.levanteappproto",
+            "certificate_hash": "ad3139a782c3692626fd5b73d6e9da020576281b"
+          }
+        },
+        {
+          "client_id": "517201686117-21oalpq455gl56blc63vlb1qhi7ihe71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDorP7c_jn2Gq6l5IlxLdMZMnExkzR0gKs"
+        },
+        {
+          "current_key": "AIzaSyAOFOuIG2qBzNC4Jr5RJKpB24NPfJHQlBU"
+        },
+        {
+          "current_key": "AIzaSyC9_CR30s0jl6HHeQLaj_7Rp1hnJLhTRZc"
+        },
+        {
+          "current_key": "AIzaSyBYtO4uu9qgtFFiEQLuPXQJZkeBvRHHa78"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517201686117-21oalpq455gl56blc63vlb1qhi7ihe71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

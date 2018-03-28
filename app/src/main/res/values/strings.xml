@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LevanteAppProto</string>
+    <string name="title_activity_denuncia">DenunciaActivity</string>
+    <string-array name="forcas">
+        <item>Polícia Civil</item>
+        <item>Polícia Militar</item>
+        <item>Forças Armadas</item>
+        <item>Batalhão Especial</item>
+        <item>Polícia de Choque</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="add_to_database">Add to Database</string>
+    <string name="google_maps_API_key">AIzaSyC3Yq9TakWLNjec0QKajhcB68cBRl-BPfw</string>
+</resources>

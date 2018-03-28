@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.levanteappproto.DenunciaActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:text="DENÚNCIA"
+                android:textSize="32dp"
+                android:gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginStart="30dp"
+                            android:focusableInTouchMode="true">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:textSize="15dp"
+                                android:id="@+id/txtEndereco"
+                                android:hint="Defina a localização da ocorrência" />
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                android:checked="true"
+                                android:background="@drawable/toggle_off"
+                                android:id="@+id/btnGPS"/>
+                        </LinearLayout>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:id="@+id/forcaSpinner">
+
+                        </Spinner>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="6">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tipos de Irregularidades"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"/>
+                            <CheckBox
+                                android:backgroundTintMode="src_in"
+                                android:foregroundTintMode="src_in"
+                                android:buttonTint="@color/azul"
+                                android:buttonTintMode="src_in"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Violência abusiva"
+                                android:textSize="20dp"
+                                android:id="@+id/chkTipo1"/>
+                            <CheckBox
+                                android:backgroundTintMode="src_in"
+                                android:foregroundTintMode="src_in"
+                                android:buttonTint="@color/azul"
+                                android:buttonTintMode="src_in"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Impedimento de gravação"
+                                android:textSize="20dp"
+                                android:id="@+id/chkTipo2"/>
+                            <CheckBox
+                                android:backgroundTintMode="src_in"
+                                android:foregroundTintMode="src_in"
+                                android:buttonTint="@color/azul"
+                                android:buttonTintMode="src_in"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Agente sem identificação"
+                                android:textSize="20dp"
+                                android:id="@+id/chkTipo3"/>
+                            <CheckBox
+                                android:backgroundTintMode="src_in"
+                                android:foregroundTintMode="src_in"
+                                android:buttonTint="@color/azul"
+                                android:buttonTintMode="src_in"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Uso indevido de arma de fogo"
+                                android:textSize="20dp"
+
+                                android:id="@+id/chkTipo4"/>
+                            <CheckBox
+                                android:backgroundTintMode="src_in"
+                                android:foregroundTintMode="src_in"
+                                android:buttonTint="@color/azul"
+                                android:buttonTintMode="src_in"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Abuso de autoridade"
+                                android:textSize="20dp"
+
+                                android:id="@+id/chkTipo5"/>
+                            <CheckBox
+                                android:backgroundTintMode="src_in"
+                                android:foregroundTintMode="src_in"
+                                android:buttonTint="@color/azul"
+                                android:buttonTintMode="src_in"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Humilhação ou tortura"
+                                android:textSize="20dp"
+                                android:id="@+id/chkTipo6"/>
+                            <CheckBox
+                                android:backgroundTintMode="src_in"
+                                android:foregroundTintMode="src_in"
+                                android:buttonTint="@color/azul"
+                                android:buttonTintMode="src_in"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Suborno ou extorsão"
+                                android:textSize="20dp"
+                                android:id="@+id/chkTipo7"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Contexto da Violação"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:textSize="20dp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtContexto"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Anexar Mídia"
+                                android:layout_margin="10px"
+                                android:id="@+id/btnAnexar"/>
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="100px"
+                                android:layout_weight="2"
+                                android:layout_margin="20px"
+                                android:background="@drawable/photo"
+                                android:id="@+id/btnFoto"/>
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="100px"
+                                android:layout_margin="20px"
+                                android:layout_weight="2"
+                                android:background="@drawable/video"
+                                android:id="@+id/btnVideo"/>
+
+                        </LinearLayout>
+                        <ProgressBar
+                            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:id="@+id/progressBar"/>
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="600px"
+                            android:layout_height="600px"
+                            android:id="@+id/imgUploaded"
+                            android:scaleType="fitCenter"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Enviar"
+                                android:id="@+id/btnEnviar"
+                                />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </ScrollView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
