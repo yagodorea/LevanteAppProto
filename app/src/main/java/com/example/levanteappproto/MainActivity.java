@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
         btnInstrucoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toastMessage("Como se proteger.");
+                Intent i = new Intent(MainActivity.this,InstrucoesActivity.class);
+                startActivity(i);
             }
         });
 

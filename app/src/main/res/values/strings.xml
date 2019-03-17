@@ -12,6 +12,7 @@
     <string name="defensorias">Defensorias Públicas</string>
     <string name="entidades">Entidades</string>
     <string name="info_direitos">Informações sobre Direitos Humanos</string>
+    <string name="instrucoes">Instruções de Abordagem</string>
     <string name="title_activity_maps">Map</string>
     <string name="add_to_database">Add to Database</string>
 </resources>

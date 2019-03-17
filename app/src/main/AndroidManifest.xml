@@ -69,6 +69,7 @@
         <activity android:name=".AddToDatabase"/>
         <activity android:name=".GruposActivity"/>
         <activity android:name=".InfoDireitosActivity"/>
+        <activity android:name=".InstrucoesActivity"/>
     </application>
 
 </manifest>
