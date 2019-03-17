@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entidades">
+        <item>Anistia Internacional: www.amnesty.org</item>
+        <item>Fundo das Nações Unidas para a Infância (CDF): www.childrensdefense.org</item>
+        <item>Centro de ação dos direitos humanos: www.humanrightsactioncenter.org</item>
+        <item>Human Rights Watch: www.hrw.org</item>
+        <item>Human Rights Without Frontiers: hrwf.eu</item>
+        <item>Associação Nacional para o Desenvolvimento de Pessoas de Cor (NAACP, do inglês National Association for the Advancement of Colored People): www.naacp.org</item>
+    </string-array>
+    <string-array name="entidades_links">
+        <item>https://www.amnesty.org</item>
+        <item>https://www.childrensdefense.org</item>
+        <item>https://www.humanrightsactioncenter.org</item>
+        <item>https://www.hrw.org</item>
+        <item>https://hrwf.eu</item>
+        <item>https://www.naacp.org</item>
+    </string-array>
+</resources>

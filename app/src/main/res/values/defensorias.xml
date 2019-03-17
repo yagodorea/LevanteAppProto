@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="estados">
+        <item>Acre</item>
+        <item>Alagoas</item>
+        <item>Amapá</item>
+        <item>Amazonas</item>
+        <item>Bahia</item>
+        <item>Brasília</item>
+        <item>Ceará</item>
+        <item>Espírito Santo</item>
+        <item>Goiás</item>
+        <item>Maranhão</item>
+        <item>Mato Grosso</item>
+        <item>Mato Grosso do Sul</item>
+        <item>Minas Gerais</item>
+        <item>Pará</item>
+        <item>Paraíba</item>
+        <item>Pernambuco</item>
+        <item>Piauí</item>
+        <item>Rio de Janeiro</item>
+        <item>Rio Grande do Norte</item>
+        <item>Rio Grande do Sul</item>
+        <item>Roraima</item>
+        <item>Rondônia</item>
+        <item>Santa Catarina</item>
+        <item>São Paulo</item>
+        <item>Sergipe</item>
+        <item>Tocantins</item>
+    </string-array>
+    <string-array name="defensorias">
+        <item>Av. Antônio da Rocha Viana, 3057 - Santa Quiteria, Rio Branco - AC, 69918-700\nTelefone: (68) 3215-4185</item>
+        <item>Defensoria Pública do Estado do Amapá\nRua Eliezer Levy, 1090. Central - Cep: 68900-083, Macapá/AP\nTelefone: (96) 3212-9140</item>
+        <item>Defensoria Pública do Estado do Amapá\nRua Eliezer Levy, 1090. Central - Cep: 68900-083, Macapá/AP\nTelefone: (96) 3212-9140</item>
+        <item>Av. Jorn. Umberto Calderaro Filho, 678 - Adrianópolis, Manaus - AM, 69057-021\nTelefone: (92) 3233-1007</item>
+        <item>R. Arquimedes Gonçalves, 271 - Nazaré, Salvador - BA, 40050-300\nTelefone: (71) 3103-3670</item>
+        <item>SIA Trecho 17 Rua 7 Lote 45, SIA - Brasília, DF, 71200-219\nTelefone: (61) 2196-4300</item>
+        <item>Av. Pinto Bandeira 1.111 - Luciano Cavalcante. Fortaleza, Ceará, Cep 60.811-170.\nTelefone: (85) 3101.3434</item>
+        <item>Rua Pedro Palácios, nº 60 – Edifício João XXIII – Cidade Alta – Centro – Vitória. CEP: 29.015-160\nTelefone: (27) 3233-3978 / 8591</item>
+        <item>Alameda Cel. Joaquim de Bastos, nº 282, Qd. 217, Lt. 14, Setor Marista, CEP: 74175-150, Goiânia-GO.\nTelefone: (62) 3201-3500</item>
+        <item>R. da Estrela, 421 - Centro, São Luís - MA, 65010-200\nTelefone: (98) 3231-0958</item>
+        <item>Rua 04, Quadra 10, Lote 01, R. Um St. Norte - Centro Político Administrativo, Cuiabá - MT, 78049-040\nTelefone: (65) 3648-8400</item>
+        <item>R. Antônio Maria Coelho, 1668 - Centro, Campo Grande - MS, 79002-220\nTelefone: (67) 3317-8757</item>
+        <item>R. José Benedito Antão, 55 - Caiçaras, Belo Horizonte - MG, 31250-115\nTelefone: (31) 3646-7971</item>
+        <item>R. Pe. Prudêncio, 154 - Campina, Belém - PA, 66019-080\nTelefone: (91) 3201-2700</item>
+        <item>Av. Monsenhor Walfredo Leal, 487 - Tambiá, João Pessoa - PB, 58020-540\nTelefone: 83 32184507</item>
+        <item>Endereço: R. Cruz Machado, 58 - Centro, Curitiba - PR, 80010-120\nTelefone: (41) 3219-7300</item>
+        <item>Rua Marquês do Amorim nº 127 - Boa Vista, Recife - PE, 50070-330\nTelefone: 0800 081 0129</item>
+        <item>Endereço: Av. João XXIII, 865 - Jóquei, Teresina - PI, 64049-010\nTelefone: (86) 3233-2543</item>
+        <item>Av. Nilo Peçanha, 259 - Centro, Araruama - RJ, 28970-000\nTelefone: (22) 2665-7832</item>
+        <item>Av. Sen. Salgado Filho, 2860-B - Lagoa Nova, Natal - RN, 59075-000\nTelefone: (84) 3232-4445</item>
+        <item>Av. Silva Paes, 333 - Centro, Rio Grande - RS, 96200-340\nTelefone: (53) 3232-3148</item>
+        <item>Av. Sebastião Diniz, 1165 - Centro, Boa Vista - RR, 69301-040\nTelefone: (95) 2121-4777</item>
+        <item>Rua Espírito Santo, R. Espírito Santo, 3845 - Centro, Alta Floresta D\'Oeste - RO, 76954-000\nTelefone: (69) 3641-2805</item>
+        <item>Av. Prof. Othon Gama D\'Eça, 622 - Centro, Florianópolis - SC, 88015-280\nTelefone: (48) 3665-6370</item>
+        <item>R. George Smith, 171 - Lapa, São Paulo - SP, 05074-010\nTelefone: 0800 773 4340</item>
+        <item>Av. Barão de Maruim, 115 - São José, Aracaju - SE, 49015-080\nTelefone: (79) 3205-3800</item>
+        <item>Paço Municipal, Av. Joaquim Teotônio Segurado, s/n - Centro, Palmas - TO, 77021-654\nTelefone: (63) 3218-6784</item>
+    </string-array>
+</resources>

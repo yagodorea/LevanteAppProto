@@ -33,13 +33,13 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths"/>
         </provider>
 
         <activity android:name=".MainActivity">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -60,13 +60,15 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAayQCjgQnTcDvjAG7ShtqMbK-OCEb2Ql4" />
+            android:value="AIzaSyD7GdZp22yO7rkxd9y_MvAYKHM3mHamuwM" />
 
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps">
         </activity>
-        <activity android:name=".AddToDatabase"></activity>
+        <activity android:name=".AddToDatabase"/>
+        <activity android:name=".GruposActivity"/>
+        <activity android:name=".InfoDireitosActivity"/>
     </application>
 
 </manifest>

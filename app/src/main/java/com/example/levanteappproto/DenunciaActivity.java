@@ -44,6 +44,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
+import java.util.UUID;
 
 public class DenunciaActivity extends AppCompatActivity {
 
@@ -163,47 +165,52 @@ public class DenunciaActivity extends AppCompatActivity {
 
                     btnEnviar.setActivated(true);
 
-                    myRef.child("occurrences").child(dbIndex).child("imgRef").setValue(imgRef);
+                    // Opaque ID for occurrence
+                    UUID newID = UUID.randomUUID();
+                    
+                    DatabaseReference occId = myRef.child("occurrences").child(newID.toString());
+                    
+                    occId.child("imgRef").setValue(imgRef);
 
                     switch (idForca) {
                         case 0: {
-                            myRef.child("occurrences").child(dbIndex).child("força").setValue("Polícia Civil");
+                            occId.child("força").setValue("Polícia Civil");
                             break;
                         }
                         case 1: {
-                            myRef.child("occurrences").child(dbIndex).child("força").setValue("Polícia Militar");
+                            occId.child("força").setValue("Polícia Militar");
                             break;
                         }
                         case 2: {
-                            myRef.child("occurrences").child(dbIndex).child("força").setValue("Forças Armadas");
+                            occId.child("força").setValue("Forças Armadas");
                             break;
                         }
                         case 3: {
-                            myRef.child("occurrences").child(dbIndex).child("força").setValue("Batalhão Especial");
+                            occId.child("força").setValue("Batalhão Especial");
                             break;
                         }
                         case 4: {
-                            myRef.child("occurrences").child(dbIndex).child("força").setValue("Tropa de Choque");
+                            occId.child("força").setValue("Tropa de Choque");
                             break;
                         }
                         default: {
-                            myRef.child("occurrences").child(dbIndex).child("força").setValue("default");
+                            occId.child("força").setValue("default");
                             break;
                         }
                     }
 
-                    myRef.child("occurrences").child(dbIndex).child("tipo1").setValue(tipo1.isChecked());
-                    myRef.child("occurrences").child(dbIndex).child("tipo2").setValue(tipo2.isChecked());
-                    myRef.child("occurrences").child(dbIndex).child("tipo3").setValue(tipo3.isChecked());
-                    myRef.child("occurrences").child(dbIndex).child("tipo4").setValue(tipo4.isChecked());
-                    myRef.child("occurrences").child(dbIndex).child("tipo5").setValue(tipo5.isChecked());
-                    myRef.child("occurrences").child(dbIndex).child("tipo6").setValue(tipo6.isChecked());
-                    myRef.child("occurrences").child(dbIndex).child("tipo7").setValue(tipo7.isChecked());
+                    occId.child("tipo1").setValue(tipo1.isChecked());
+                    occId.child("tipo2").setValue(tipo2.isChecked());
+                    occId.child("tipo3").setValue(tipo3.isChecked());
+                    occId.child("tipo4").setValue(tipo4.isChecked());
+                    occId.child("tipo5").setValue(tipo5.isChecked());
+                    occId.child("tipo6").setValue(tipo6.isChecked());
+                    occId.child("tipo7").setValue(tipo7.isChecked());
                     if (txtContexto.getText() != null) {
-                        myRef.child("occurrences").child(dbIndex).child("contexto").setValue(txtContexto.getText().toString());
+                        occId.child("contexto").setValue(txtContexto.getText().toString());
                     }
-                    myRef.child("occurrences").child(dbIndex).child("lat").setValue(lat);
-                    myRef.child("occurrences").child(dbIndex).child("lon").setValue(lon);
+                    occId.child("lat").setValue(lat);
+                    occId.child("lon").setValue(lon);
                     myRef.child("occurrencesNumber").setValue(dbSize+1);
                     setResult(RESULT_OK);
                     finish();
@@ -274,7 +281,7 @@ public class DenunciaActivity extends AppCompatActivity {
     //
     //
     //
-    // MOST IMPORTANT FUNCION GODDAMMIT >>>>>~~~~~~~~~~~~~~>
+    // MOST IMPORTANT FUNCION >>>>>~~~~~~~~~~~~~~>
     //
     //
     //

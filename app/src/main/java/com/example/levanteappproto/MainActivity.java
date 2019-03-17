@@ -44,14 +44,16 @@ public class MainActivity extends AppCompatActivity {
         btnDireitos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toastMessage("Saiba quais são os seus direitos.");
+                Intent i = new Intent(MainActivity.this,InfoDireitosActivity.class);
+                startActivity(i);
             }
         });
 
         btnGrupos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toastMessage("Contatos de grupos de Direitos Humanos.");
+                Intent i = new Intent(MainActivity.this,GruposActivity.class);
+                startActivity(i);
             }
         });
 
