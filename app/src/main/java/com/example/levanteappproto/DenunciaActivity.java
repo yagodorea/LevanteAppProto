@@ -24,6 +24,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.levanteappproto.utils.Occurrence;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -414,49 +415,33 @@ public class DenunciaActivity extends AppCompatActivity {
 
         DatabaseReference occId = myRef.child("occurrences").child(newID.toString());
 
-        occId.child("imgRef").setValue(imgRef);
+        Occurrence newOccurrence = new Occurrence();
 
-        occId.child("timestamp").setValue(new Date(System.currentTimeMillis()).toLocaleString());
+        newOccurrence.setImgRef(imgRef);
 
-        switch (idForca) {
-            case 0: {
-                occId.child("força").setValue("Polícia Civil");
-                break;
-            }
-            case 1: {
-                occId.child("força").setValue("Polícia Militar");
-                break;
-            }
-            case 2: {
-                occId.child("força").setValue("Forças Armadas");
-                break;
-            }
-            case 3: {
-                occId.child("força").setValue("Batalhão Especial");
-                break;
-            }
-            case 4: {
-                occId.child("força").setValue("Tropa de Choque");
-                break;
-            }
-            default: {
-                occId.child("força").setValue("default");
-                break;
-            }
+        newOccurrence.setTimestamp(new Date(System.currentTimeMillis()).toLocaleString());
+
+        String[] forcas = getResources().getStringArray(R.array.forcas);
+        if (idForca <= 4){
+            newOccurrence.setForca(forcas[idForca]);
         }
 
-        occId.child("tipo1").setValue(tipo1.isChecked());
-        occId.child("tipo2").setValue(tipo2.isChecked());
-        occId.child("tipo3").setValue(tipo3.isChecked());
-        occId.child("tipo4").setValue(tipo4.isChecked());
-        occId.child("tipo5").setValue(tipo5.isChecked());
-        occId.child("tipo6").setValue(tipo6.isChecked());
-        occId.child("tipo7").setValue(tipo7.isChecked());
+        newOccurrence.setViolenciaAbusiva(tipo1.isChecked());
+        newOccurrence.setImpedimentoGravacao(tipo2.isChecked());
+        newOccurrence.setAgenteSemIdentificacao(tipo3.isChecked());
+        newOccurrence.setUsoIndevidoArmaDeFogo(tipo4.isChecked());
+        newOccurrence.setAbusoAutoridade(tipo5.isChecked());
+        newOccurrence.setHumilhacaoTortura(tipo6.isChecked());
+        newOccurrence.setSubornoExtorsao(tipo7.isChecked());
+
         if (txtContexto.getText() != null) {
-            occId.child("contexto").setValue(txtContexto.getText().toString());
+            newOccurrence.setContexto(txtContexto.getText().toString());
         }
-        occId.child("lat").setValue(lat);
-        occId.child("lon").setValue(lon);
+
+        newOccurrence.setLat(lat);
+        newOccurrence.setLon(lon);
+
+        occId.setValue(newOccurrence);
         setResult(RESULT_OK);
         finish();
     }
