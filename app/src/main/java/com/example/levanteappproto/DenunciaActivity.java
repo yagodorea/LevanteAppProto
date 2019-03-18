@@ -416,7 +416,6 @@ public class DenunciaActivity extends AppCompatActivity {
 
         occId.child("imgRef").setValue(imgRef);
 
-        // Store occurrence timestamp
         occId.child("timestamp").setValue(new Date(System.currentTimeMillis()).toLocaleString());
 
         switch (idForca) {
