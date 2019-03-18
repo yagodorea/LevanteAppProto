@@ -31,11 +31,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -62,7 +59,6 @@ public class DenunciaActivity extends AppCompatActivity {
     private String dbIndex;
     private String imgRef;
     private int idForca = 0;
-    private int dbSize = -1;
     private double lat, lon;
     private boolean dataAquired = false;
 
@@ -123,26 +119,6 @@ public class DenunciaActivity extends AppCompatActivity {
         // Referência para armazenamento de mídia
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
-        /////////////// GERENCIAMENTO DE BD ///////////////////
-        // Listener para o banco de dados
-        Log.d(TAG, "Shazam! ->onCreate: Listener do BD.");
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                dbSize = dataSnapshot.child("occurrencesNumber").getValue(Integer.class);
-                Log.d(TAG, "Shazam! ->addValueEventListener: dbSize is: " + dbSize);
-                dbIndex = Integer.toString(dbSize+1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "addValueEventListener: Failed to read value.", error.toException());
-            }
-        });
-
         // Botão para enviar os dados para o BD
         Log.d(TAG, "Shazam! ->onCreate: Listener do botão enviar.");
         btnEnviar.setOnClickListener(new View.OnClickListener() {
@@ -154,66 +130,7 @@ public class DenunciaActivity extends AppCompatActivity {
 
                 if (dataAquired) {
                     // Escrever todos os outros dados
-
                     imgUpload();
-
-                    try {
-                        Thread.sleep(4000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    btnEnviar.setActivated(true);
-
-                    // Opaque ID for occurrence
-                    UUID newID = UUID.randomUUID();
-                    
-                    DatabaseReference occId = myRef.child("occurrences").child(newID.toString());
-                    
-                    occId.child("imgRef").setValue(imgRef);
-
-                    switch (idForca) {
-                        case 0: {
-                            occId.child("força").setValue("Polícia Civil");
-                            break;
-                        }
-                        case 1: {
-                            occId.child("força").setValue("Polícia Militar");
-                            break;
-                        }
-                        case 2: {
-                            occId.child("força").setValue("Forças Armadas");
-                            break;
-                        }
-                        case 3: {
-                            occId.child("força").setValue("Batalhão Especial");
-                            break;
-                        }
-                        case 4: {
-                            occId.child("força").setValue("Tropa de Choque");
-                            break;
-                        }
-                        default: {
-                            occId.child("força").setValue("default");
-                            break;
-                        }
-                    }
-
-                    occId.child("tipo1").setValue(tipo1.isChecked());
-                    occId.child("tipo2").setValue(tipo2.isChecked());
-                    occId.child("tipo3").setValue(tipo3.isChecked());
-                    occId.child("tipo4").setValue(tipo4.isChecked());
-                    occId.child("tipo5").setValue(tipo5.isChecked());
-                    occId.child("tipo6").setValue(tipo6.isChecked());
-                    occId.child("tipo7").setValue(tipo7.isChecked());
-                    if (txtContexto.getText() != null) {
-                        occId.child("contexto").setValue(txtContexto.getText().toString());
-                    }
-                    occId.child("lat").setValue(lat);
-                    occId.child("lon").setValue(lon);
-                    myRef.child("occurrencesNumber").setValue(dbSize+1);
-                    setResult(RESULT_OK);
-                    finish();
                 }
                 else {
                     setResult(RESULT_CANCELED);
@@ -455,7 +372,7 @@ public class DenunciaActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             btnEnviar.setEnabled(false);
 
-            StorageReference ref = mStorageRef.child(imgRef);
+            final StorageReference ref = mStorageRef.child(imgRef);
             ref.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -464,6 +381,8 @@ public class DenunciaActivity extends AppCompatActivity {
                     dataAquired = true;
                     btnEnviar.setEnabled(true);
                     progressBar.setVisibility(View.INVISIBLE);
+                    imgRef = taskSnapshot.getDownloadUrl().toString();
+                    sendData();
                 }
             })
             .addOnFailureListener(new OnFailureListener() {
@@ -476,7 +395,70 @@ public class DenunciaActivity extends AppCompatActivity {
 
         }else {
             Log.d(TAG, "Shazam! ->imgUpload: entrou, imgUri null");
+            sendData();
         }
+    }
+
+    private void sendData() {
+
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        btnEnviar.setActivated(true);
+
+        // Opaque ID for occurrence
+        UUID newID = UUID.randomUUID();
+
+        DatabaseReference occId = myRef.child("occurrences").child(newID.toString());
+
+        occId.child("imgRef").setValue(imgRef);
+
+        occId.child("timestamp").setValue(new Date(System.currentTimeMillis()).toLocaleString());
+
+        switch (idForca) {
+            case 0: {
+                occId.child("força").setValue("Polícia Civil");
+                break;
+            }
+            case 1: {
+                occId.child("força").setValue("Polícia Militar");
+                break;
+            }
+            case 2: {
+                occId.child("força").setValue("Forças Armadas");
+                break;
+            }
+            case 3: {
+                occId.child("força").setValue("Batalhão Especial");
+                break;
+            }
+            case 4: {
+                occId.child("força").setValue("Tropa de Choque");
+                break;
+            }
+            default: {
+                occId.child("força").setValue("default");
+                break;
+            }
+        }
+
+        occId.child("tipo1").setValue(tipo1.isChecked());
+        occId.child("tipo2").setValue(tipo2.isChecked());
+        occId.child("tipo3").setValue(tipo3.isChecked());
+        occId.child("tipo4").setValue(tipo4.isChecked());
+        occId.child("tipo5").setValue(tipo5.isChecked());
+        occId.child("tipo6").setValue(tipo6.isChecked());
+        occId.child("tipo7").setValue(tipo7.isChecked());
+        if (txtContexto.getText() != null) {
+            occId.child("contexto").setValue(txtContexto.getText().toString());
+        }
+        occId.child("lat").setValue(lat);
+        occId.child("lon").setValue(lon);
+        setResult(RESULT_OK);
+        finish();
     }
 
     private File createFile(int codeMedia) throws IOException {
