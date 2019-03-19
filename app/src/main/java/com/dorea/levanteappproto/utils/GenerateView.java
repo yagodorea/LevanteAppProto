@@ -1,4 +1,4 @@
-package com.example.levanteappproto.utils;
+package com.dorea.levanteappproto.utils;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.example.levanteappproto.R;
+import com.dorea.levanteappproto.R;
 
 import java.util.List;
 

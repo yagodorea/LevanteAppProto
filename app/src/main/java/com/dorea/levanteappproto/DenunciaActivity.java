@@ -1,4 +1,4 @@
-package com.example.levanteappproto;
+package com.dorea.levanteappproto;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,7 +24,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.levanteappproto.utils.Occurrence;
+import com.dorea.levanteappproto.utils.Occurrence;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,7 +42,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
 import java.util.UUID;
 
 public class DenunciaActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.levanteappproto;
+package com.dorea.levanteappproto;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

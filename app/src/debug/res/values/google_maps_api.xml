@@ -7,7 +7,7 @@
     https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=34:2C:15:A8:A1:E8:53:0A:B2:A0:68:F7:44:7E:C1:99:38:5E:8D:C5%3Bcom.example.yago_.levanteappproto
 
     You can also add your credentials to an existing key, using this line:
-    34:2C:15:A8:A1:E8:53:0A:B2:A0:68:F7:44:7E:C1:99:38:5E:8Dcom.example.levanteappprotoroto
+    34:2C:15:A8:A1:E8:53:0A:B2:A0:68:F7:44:7E:C1:99:38:5E:8Dcom.dorea.levanteappproto
 
     Alternatively, follow the directions here:
     https://developers.google.com/maps/documentation/android/start#get-key
@@ -15,7 +15,7 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+    <string name="google_maps_key" temgplateMergeStrategy="preserve" translatable="false">
         AIzaSyC3Yq9TakWLNjec0QKajhcB68cBRl-BPfw
     </string>
 </resources>

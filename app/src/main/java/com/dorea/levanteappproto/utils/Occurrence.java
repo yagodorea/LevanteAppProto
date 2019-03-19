@@ -1,4 +1,4 @@
-package com.example.levanteappproto.utils;
+package com.dorea.levanteappproto.utils;
 
 public class Occurrence {
 

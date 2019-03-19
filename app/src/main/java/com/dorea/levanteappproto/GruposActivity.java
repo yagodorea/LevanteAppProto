@@ -1,4 +1,4 @@
-package com.example.levanteappproto;
+package com.dorea.levanteappproto;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.levanteappproto.utils.GenerateView;
+import com.dorea.levanteappproto.utils.GenerateView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

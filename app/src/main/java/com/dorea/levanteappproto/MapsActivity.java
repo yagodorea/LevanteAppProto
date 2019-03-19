@@ -1,4 +1,4 @@
-package com.example.levanteappproto;
+package com.dorea.levanteappproto;
 
 import android.Manifest;
 import android.content.Intent;

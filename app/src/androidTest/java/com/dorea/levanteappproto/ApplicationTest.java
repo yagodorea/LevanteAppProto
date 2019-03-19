@@ -1,4 +1,4 @@
-package com.example.levanteappproto;
+package com.dorea.levanteappproto;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
