@@ -1,4 +1,4 @@
-package com.dorea.levanteappproto;
+package com.dorea.denuncia;
 
 import android.Manifest;
 import android.content.Intent;
@@ -14,8 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Marker;

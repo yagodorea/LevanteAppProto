@@ -1,74 +1,35 @@
 {
   "project_info": {
-    "project_number": "517201686117",
-    "firebase_url": "https://levanteapp-83089.firebaseio.com",
-    "project_id": "levanteapp-83089",
-    "storage_bucket": "levanteapp-83089.appspot.com"
+    "project_number": "501126044324",
+    "firebase_url": "https://denuncia-6ddad.firebaseio.com",
+    "project_id": "denuncia-6ddad",
+    "storage_bucket": "denuncia-6ddad.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:517201686117:android:d0338579a0348ce2",
+        "mobilesdk_app_id": "1:501126044324:android:cd0f58f5fc124d0d",
         "android_client_info": {
-          "package_name": "com.dorea.levanteappproto"
+          "package_name": "com.dorea.denuncia"
         }
       },
       "oauth_client": [
         {
-          "client_id": "517201686117-oirbq63qgcag8h1ha4ie74scpejhub4o.apps.googleusercontent.com",
+          "client_id": "501126044324-daod47s6auj10h8ok4rjs613pmuvid84.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dorea.denuncia",
+            "certificate_hash": "a898a42f2762350db0f08342044945e9c525694b"
+          }
+        },
+        {
+          "client_id": "501126044324-e6le67m952s1mslpgtkjor026u5rl2ek.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCKXLMl5jJMnc1jvTcYZiijJ-wyhQa2OzU"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:517201686117:android:3848d18492c08269",
-        "android_client_info": {
-          "package_name": "com.dorea.levanteappproto"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "517201686117-jtdi6g3iplo862vusgkmcnkpfkkoadlk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dorea.levanteappproto",
-            "certificate_hash": "ad3139a782c3692626fd5b73d6e9da020576281b"
-          }
-        },
-        {
-          "client_id": "517201686117-15ca47c7nlus248ejiub22m5ebpgia9q.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dorea.levanteappproto",
-            "certificate_hash": "e60874c3a0e0de4a7ece8c09906889b714dc2f76"
-          }
-        },
-        {
-          "client_id": "517201686117-oirbq63qgcag8h1ha4ie74scpejhub4o.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCKXLMl5jJMnc1jvTcYZiijJ-wyhQa2OzU"
+          "current_key": "AIzaSyD0sDcmofTLH-eMGn-pmoGcOsu-YArdFIg"
         }
       ],
       "services": {
@@ -79,51 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "517201686117-06begmer9r3jc7vtvf5ss72vdib4vp1o.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:517201686117:android:333f0b5f49f932ac",
-        "android_client_info": {
-          "package_name": "com.example.yago_.levanteappproto"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "517201686117-fd53ecls0fl3ok9ps8qcjcbe8s37vq6l.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.yago_.levanteappproto",
-            "certificate_hash": "ad3139a782c3692626fd5b73d6e9da020576281b"
-          }
-        },
-        {
-          "client_id": "517201686117-oirbq63qgcag8h1ha4ie74scpejhub4o.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCKXLMl5jJMnc1jvTcYZiijJ-wyhQa2OzU"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "517201686117-06begmer9r3jc7vtvf5ss72vdib4vp1o.apps.googleusercontent.com",
+              "client_id": "501126044324-e6le67m952s1mslpgtkjor026u5rl2ek.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

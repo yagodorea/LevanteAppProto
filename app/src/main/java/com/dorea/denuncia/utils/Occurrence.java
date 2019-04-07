@@ -1,4 +1,4 @@
-package com.dorea.levanteappproto.utils;
+package com.dorea.denuncia.utils;
 
 public class Occurrence {
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LevanteAppProto</string>
+    <string name="app_name">DenunciaApp</string>
     <string name="title_activity_denuncia">DenunciaActivity</string>
     <string-array name="forcas">
         <item>Polícia Civil</item>
@@ -15,4 +15,5 @@
     <string name="instrucoes">Instruções de Abordagem</string>
     <string name="title_activity_maps">Map</string>
     <string name="add_to_database">Add to Database</string>
+    <string name="sobre">Sobre o Projeto</string>
 </resources>

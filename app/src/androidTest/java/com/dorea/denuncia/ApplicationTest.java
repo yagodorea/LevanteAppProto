@@ -1,4 +1,4 @@
-package com.dorea.levanteappproto;
+package com.dorea.denuncia;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

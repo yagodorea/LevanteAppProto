@@ -1,4 +1,4 @@
-package com.dorea.levanteappproto;
+package com.dorea.denuncia;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,18 +12,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class InstrucoesActivity extends AppCompatActivity {
+public class InfoDireitosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instrucoes);
+        setContentView(R.layout.activity_info_direitos);
 
         try {
-            WebView webView = findViewById(R.id.instrucoesWebView);
+            WebView webView = findViewById(R.id.infoDireitosWebview);
             webView.setWebViewClient(new WebViewClient());
 
-            InputStream info = getResources().openRawResource(R.raw.instrucoes);
+            InputStream info = getResources().openRawResource(R.raw.infodireitos);
             BufferedReader br = new BufferedReader(new InputStreamReader(info, "utf-8"));
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -32,6 +32,7 @@ public class InstrucoesActivity extends AppCompatActivity {
                 stringBuilder.append(line);
             }
 
+            webView.getSettings().setDefaultTextEncodingName("utf-8");
             webView.loadData(stringBuilder.toString(),"text/html","utf-8");
         } catch (IOException e) {
             Toast.makeText(this,"Não foi possível encontrar um arquivo,", Toast.LENGTH_LONG).show();

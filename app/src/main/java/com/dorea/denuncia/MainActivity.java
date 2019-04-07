@@ -1,4 +1,4 @@
-package com.dorea.levanteappproto;
+package com.dorea.denuncia;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -75,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
         btnSobre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toastMessage("Sobre o aplicativo.");
+                Intent i = new Intent(MainActivity.this,SobreActivity.class);
+                startActivity(i);
             }
         });
     }

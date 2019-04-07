@@ -1,14 +1,11 @@
-package com.dorea.levanteappproto.utils;
+package com.dorea.denuncia.utils;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-
-import com.dorea.levanteappproto.R;
 
 import java.util.List;
 

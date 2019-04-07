@@ -1,4 +1,4 @@
-package com.dorea.levanteappproto;
+package com.dorea.denuncia;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,10 +24,9 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dorea.levanteappproto.utils.Occurrence;
+import com.dorea.denuncia.utils.Occurrence;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -335,7 +334,7 @@ public class DenunciaActivity extends AppCompatActivity {
             }
             if (mediaFile != null) {
                 imgUri = FileProvider.getUriForFile(this,
-                                                    "com.example.android.fileprovider",
+                                                    "com.dorea.fileprovider",
                                                             mediaFile);
                 i.putExtra(MediaStore.EXTRA_OUTPUT, imgUri);
                 Log.d(TAG, "Shazam! ->btnMedia: comecar atividade");
@@ -373,23 +372,32 @@ public class DenunciaActivity extends AppCompatActivity {
             btnEnviar.setEnabled(false);
 
             final StorageReference ref = mStorageRef.child(imgRef);
-            ref.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            ref.putFile(imgUri).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Log.d(TAG, "Shazam! ->onSuccess: upload com sucesso");
-                    Toast.makeText(DenunciaActivity.this,"Anexado com sucesso",Toast.LENGTH_SHORT).show();
-                    dataAquired = true;
-                    btnEnviar.setEnabled(true);
-                    progressBar.setVisibility(View.INVISIBLE);
-                    imgRef = taskSnapshot.getDownloadUrl().toString();
-                    sendData();
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        Log.d(TAG, "Shazam! -> falha no upload");
+                        Toast.makeText(DenunciaActivity.this,"Anexo falhou!" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                        throw task.getException();
+                    }
+
+                    return ref.getDownloadUrl();
                 }
-            })
-            .addOnFailureListener(new OnFailureListener() {
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.d(TAG, "Shazam! ->onFailure: falha no upload");
-                    Toast.makeText(DenunciaActivity.this,"Anexo falhou!" + e.getMessage(),Toast.LENGTH_SHORT).show();
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "Shazam! ->onSuccess: upload com sucesso");
+                        Toast.makeText(DenunciaActivity.this,"Anexado com sucesso",Toast.LENGTH_SHORT).show();
+                        dataAquired = true;
+                        btnEnviar.setEnabled(true);
+                        progressBar.setVisibility(View.INVISIBLE);
+                        imgRef = task.getResult().toString();
+                        sendData();
+                    } else {
+                        Log.d(TAG, "Shazam! -> falha no upload");
+                        Toast.makeText(DenunciaActivity.this,"Anexo falhou!" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
@@ -440,6 +448,7 @@ public class DenunciaActivity extends AppCompatActivity {
         newOccurrence.setLat(lat);
         newOccurrence.setLon(lon);
 
+        Log.d(TAG, "Shazam! ->Writing data to database");
         occId.setValue(newOccurrence);
         setResult(RESULT_OK);
         finish();
